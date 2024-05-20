@@ -73,7 +73,7 @@ public class UserAccountManager {
     return "Account Details: \n" +
             "User Name: " + username + "\n" +
             "Email: " + email + "\n" +
-            "First Name: " + firstName + "\n"
+            "First Name: " + firstName + "\n"+
             "Last Name: " +  lastName + "\n";
   }
 }
