@@ -1,42 +1,78 @@
-import java.util.ArrayList;
-import java.util.List;
+/**
+ * JobApplicationHandler
+ */
+
+ import java.util.ArrayList;
+ import java.util.List;
 
 public class JobApplicationHandler {
-    private int applicationId;
-    private int jobId;
-    private String applicantUsername;
-    private String applicationStatus;
 
-    // Constructor
-    public JobApplicationHandler(int applicationId, int jobId, String applicantUsername, String applicationStatus) {
-        this.applicationId = applicationId;
-        this.jobId = jobId;
-        this.applicantUsername = applicantUsername;
-        this.applicationStatus = applicationStatus;
+    //Class Attributes
+    private ArrayList<JobApplication> jobApplications;
+    
+
+    //Class Constructor
+    public JobApplicationHandler()
+    {
+        this.jobApplications= new ArrayList<JobApplication>();
     }
 
-    // Apply for Job
-    public boolean applyForJob(int jobId, String applicantUsername) {
-        // Logic to create a new job application
-        // Assume successful creation for simplicity
-        this.applicationId++; // Increment applicationId for each new application
+    //applyForJob Method
+    public boolean applyForJob(int jobId, String applicantUsername)
+    {
+        for(JobApplication application : jobApplications)
+        {
+            if(application.getJobId()==jobId && application.getApplicantUsername()==applicantUsername)
+            {
+                System.out.println("You have already applied for this job.");
+                return false;
+            }
+
+        }
+
+        JobApplication tempApplication = new JobApplication(jobApplications.size()+1, jobId, applicantUsername,"pending");
+        jobApplications.add(tempApplication);
+        System.out.println("Application Submitted Successfully!");
         return true;
+    } 
+
+    //getJobApplications Method
+    public List<JobApplication> geJobApplications(int jobId)
+    {
+       List<JobApplication> ApplicationsForJob= new ArrayList<JobApplication>();
+       
+       for(JobApplication application : jobApplications)
+       {
+        if(application.getJobId()==jobId)
+        {
+            ApplicationsForJob.add(application);
+        }
+       }
+
+       return ApplicationsForJob;
     }
 
-    // Get Job Applications
-    public List<JobApplication> getJobApplications(int jobId) {
-        // Logic to retrieve job applications for a specific jobId
-        List<JobApplication> applications = new ArrayList<>();
-        // Assume fetching applications from database or storage
-        // applications.add(new JobApplication(...));
-        return applications;
+    //updateApplicatinStatus method
+    public boolean updateApplicatinStatus(int applicationId, String newStatus)
+    {
+        for(JobApplication application : jobApplications)
+        {
+            if(application.getApplicationId()==applicationId)
+            {
+                application.setApplicationStatus(newStatus);
+                System.out.println("Application Updated Successfully! ");
+                return true;
+            }
+
+        }
+        System.out.println("Application not Found! ");
+        return false;
     }
 
-    // Update Application Status
-    public boolean updateApplicationStatus(int applicationId, String newStatus) {
-        // Logic to update application status
-        // Assume successful update
-        this.applicationStatus = newStatus;
-        return true;
+    //to display the list
+    public void displayAllApplications() {
+        for (JobApplication application : jobApplications) {
+            System.out.println(application);
+        }
     }
 }

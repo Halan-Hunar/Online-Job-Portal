@@ -2,20 +2,22 @@
  * JobApplication
  */
 public class JobApplication {
-
+//class attributes
     private int jobId;
     private int applicationId;
-    private String applicationUsername;
+    private String applicantUsername;
     private String applicationStatus;
 
+    //consturctor
     public JobApplication(int jobId,int applicationId, String applicationUsername, String applicanStatus)
     {
         this.jobId=jobId;
         this.applicationId=applicationId;
-        this.applicationUsername=applicationUsername;
+        this.applicantUsername=applicationUsername;
         this.applicationStatus=applicanStatus;
     }
 
+    //setters
     public void setJobId(int jobId) {
         this.jobId = jobId;
     }
@@ -25,12 +27,15 @@ public class JobApplication {
     }
 
     public void setApplicationUsername(String applicationUsername) {
-        this.applicationUsername = applicationUsername;
+        this.applicantUsername = applicationUsername;
     }
 
     public void setApplicationStatus(String applicationStatus) {
         this.applicationStatus = applicationStatus;
     }
+
+
+    //getters
 
     public int getJobId() {
         return jobId;
@@ -40,21 +45,22 @@ public class JobApplication {
         return applicationId;
     }
 
-    public String getApplicationUsername() {
-        return applicationUsername;
+
+    public String getApplicantUsername() {
+        return applicantUsername;
     }
 
     public String getApplicationStatus() {
         return applicationStatus;
     }
 
-    
+    //to string method
     public String toString() {
         
         return "Job Application{"+
         "Job Id : "+jobId +
         "application Id:"+ applicationId+
-        "Application Username: "+applicationUsername+
+        "Applicant Username: "+applicantUsername+
         "Application Status"+applicationStatus;
 
     }
