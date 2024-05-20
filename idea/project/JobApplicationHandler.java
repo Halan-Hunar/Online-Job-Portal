@@ -1,4 +1,4 @@
-/**
+package idea.project; /**
  * JobApplicationHandler
  */
 

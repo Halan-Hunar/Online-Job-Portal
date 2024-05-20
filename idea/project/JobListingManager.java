@@ -1,3 +1,5 @@
+package idea.project;
+
 class JobListingManager {
   private int jobId;
   private String jobTitle;
@@ -71,7 +73,7 @@ class JobListingManager {
 
   public JobListing getJobListingDetails(int jobId){
     if(this.jobId == jobId){
-      return new JobListing(this.jobId, this.jobTitle, this.jobDescription, this.companyName, this.location, this.salary);
+      return new JobListing (this.jobId, this.jobTitle, this.jobDescription, this.companyName, this.location, this.salary);
     }
     else {
       System.out.println("Job listing with " + jobId + " does not exist");

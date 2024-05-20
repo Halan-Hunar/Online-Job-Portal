@@ -1,3 +1,5 @@
+package idea.project;
+
 public class UserAccountManager {
 
   private String username; //stores user info
