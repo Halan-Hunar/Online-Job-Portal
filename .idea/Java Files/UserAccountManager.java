@@ -40,7 +40,7 @@ public class UserAccountManager {
 
   // informationy user'ka update aka by comparing the provided username with the stored one
   public boolean updateUserProfile(String username, String email, String firstName, String lastName) {
-    if (this.username.equals.(username)){
+    if (this.username.equals(username)){
       this.email = email;
       this.firstName = firstName;
       this.lastName = lastName;
@@ -71,7 +71,7 @@ public class UserAccountManager {
   // displays account details
   public String toString(){
     return "Account Details: \n" +
-            "User Name: " + username "\n" +
+            "User Name: " + username + "\n" +
             "Email: " + email + "\n" +
             "First Name: " + firstName + "\n"
             "Last Name: " +  lastName + "\n";
