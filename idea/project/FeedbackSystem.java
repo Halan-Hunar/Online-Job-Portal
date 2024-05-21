@@ -21,7 +21,7 @@ public class FeedbackSystem {
         this.feedbackMessage = "" ;
         this.feedbackDate = new Date();
         this.feedbackList = new ArrayList<>();
-        
+    }
         private class Feedback {
             
             private int feedbackId ;
@@ -49,7 +49,7 @@ public class FeedbackSystem {
                 return feedbackMessage ;
             }
             
-            public getFeedbackDate(){
+            public Date getFeedbackDate(){
                 return feedbackDate ;
             }
            
