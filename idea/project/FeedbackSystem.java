@@ -22,7 +22,7 @@ public class FeedbackSystem {
         this.feedbackDate = new Date();
         this.feedbackList = new ArrayList<>();
     }
-        private class Feedback {
+        class Feedback {
             
             private int feedbackId ;
             private String username ;
