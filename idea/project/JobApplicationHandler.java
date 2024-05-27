@@ -3,7 +3,6 @@ package idea.project; /**
  */
 
  import java.util.ArrayList;
- import java.util.List;
 
 public class JobApplicationHandler {
 
@@ -37,9 +36,9 @@ public class JobApplicationHandler {
     } 
 
     //getJobApplications Method
-    public List<JobApplication> geJobApplications(int jobId)
+    public ArrayList<JobApplication> geJobApplications(int jobId)
     {
-       List<JobApplication> ApplicationsForJob= new ArrayList<JobApplication>();
+       ArrayList<JobApplication> ApplicationsForJob= new ArrayList<JobApplication>();
        
        for(JobApplication application : jobApplications)
        {
