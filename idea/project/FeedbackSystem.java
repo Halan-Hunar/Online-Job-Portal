@@ -11,7 +11,7 @@ public class FeedbackSystem {
     private String username ;
     private String feedbackMessage ;
     private Date feedbackDate ;
-    private List<Feedback> feedbackList ;
+    private ArrayList<Feedback> feedbackList ;
     
     
     public FeedbackSystem(){
