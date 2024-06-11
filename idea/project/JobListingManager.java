@@ -76,4 +76,8 @@ class JobListingManager extends JobPortalManager implements Manageable {
             return null;
         }
     }
+
+    public int getJobId() {
+        return this.jobId;
+    }
 }
